@@ -46,8 +46,6 @@ puts "==================== end =================="
 puts
 
 
-# frame_size_max = (array.length*frame_percent/100)
-# puts "Max size of push out frame is  #{frame_size_max.to_s}"
 puts "___________________ Wrost_range funtion ______________________________"
 puts worst_range(array, frame_percent)
 puts
