@@ -3,7 +3,7 @@
 require "./worst_range.rb"
 
 puts  "****************** Start data ****************************************"
-p array = [1,2,31,4,5,10,2]
+p array = [1, 2, 3, 0, 1, 15, 34, 0, 0, 1, 3, 2]
 frame_percent = 10
 frame_size_max = 3
 
@@ -16,31 +16,25 @@ array_improved = {
     }
 
 
-puts "Ratio before is #{array_improved[:ratio]}"
+puts "Ratio before is #{array_improved[:ratio].round(5)}"
 puts
 
-(1..frame_size_max).each do |cnt|                      # Each => count of elements in frame
-        (0..array.size-cnt).each do |start|            # Each => start position
-             mass = array.clone
-#              new_ratio = mass.slice!(start, cnt).mean # Выдавало значение стартовой позиции
-             mass.slice!(start, cnt)
-             new_ratio = mass.mean
-# ---------------- Debug information --------------------------
-#             puts "---->>>><<<<<---"
-#             p "mass =>#{mass}"
-#             p "ratio => #{new_ratio}"
-#             puts
-#----------------- Debug block end ____________________________
-             if new_ratio > array_improved[:ratio]
-                 array_improved = {
-                     ratio: new_ratio,
-                     start: start,
-                       cnt: cnt
-                 }
-             end
-        end
-
+(1..frame_size_max).each do |cnt|                  # Each => count of elements in frame
+    (0..array.size-cnt).each do |start|            # Each => start position
+         mass = array.clone
+#         new_ratio = mass.slice!(start, cnt).mean # Выдавало значение стартовой позиции
+         mass.slice!(start, cnt)
+         new_ratio = mass.mean.round(5)
+         if new_ratio > array_improved[:ratio]
+             array_improved = {
+                 ratio: new_ratio,
+                 start: start,
+                   cnt: cnt
+             }
+             puts "We have a new best ratio:   #{array_improved}"
+         end
     end
+end
 puts "=============== Result block =============="
 puts array_improved
 puts "==================== end =================="
