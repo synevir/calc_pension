@@ -1,3 +1,12 @@
+##############################################################
+#                                                            #
+#  `calc_pension.rb` is a Ruby script for calculating the    #
+#   wrost continuous range of a person work experience       #
+#   according by law changes of 2016.                        #
+#                                                            #
+##############################################################
+
+
 #array=[10,5,15,25,45,15,15,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,2,2,10,25,25,2,1,8,7,10,6,20,15,20,20,20,21,5]
 #array = [1,2,31,4,5,10,1,0,1]
 require "./worst_range.rb"
@@ -22,7 +31,6 @@ puts
 (1..frame_size_max).each do |cnt|                  # Each => count of elements in frame
     (0..array.size-cnt).each do |start|            # Each => start position
          mass = array.clone
-#         new_ratio = mass.slice!(start, cnt).mean # Выдавало значение стартовой позиции
          mass.slice!(start, cnt)
          new_ratio = mass.mean.round(5)
          if new_ratio > array_improved[:ratio]
