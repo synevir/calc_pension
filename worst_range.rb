@@ -6,7 +6,8 @@ end
 
 def worst_range(a, percent = 10)
 # frame_size = a.size * percent / 100
-# If you want to change `percent` value uncoment row above and comment row under
+# If you want to change `percent` value uncoment row above and comment row under `frame_size = 3`
+# The value percent=10 is maximum setted by law changes of 2016
   frame_size = 3
   total_sum = a.sum
   total_cnt = a.count

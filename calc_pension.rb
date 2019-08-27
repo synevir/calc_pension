@@ -1,7 +1,7 @@
 ##############################################################
 #                                                            #
 #  `calc_pension.rb` is a Ruby script for calculating the    #
-#   wrost continuous range of a person work experience       #
+#   worst continuous range of a person work experience       #
 #   according by law changes of 2016.                        #
 #                                                            #
 ##############################################################
